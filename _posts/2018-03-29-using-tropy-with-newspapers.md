@@ -18,7 +18,7 @@ The best way to illustrate this point is to demonstrate my process for working w
 For my most recent side project, I’ve been focusing on newspapers from Chronicling America. Knowing that I was going to be using newspapers, I wanted to harvest as much consistent metadata from those papers as possible. So I created a custom template for newspapers.
 
 <figure>
-  <img srcset="/assets/images/blog/2018/03/newspaper-template.png 1x, /assets/images/blog/2018/03/newspaper-template@2x.png, 2x" src="/assets/images/blog/2018/03/newspaper-template.png">
+  <img srcset=" {{ "/assets/images/blog/2018/03/newspaper-template.png" | relative_url }} 1x, {{ "/assets/images/blog/2018/03/newspaper-template@2x.png" | relative_url }} 2x" src="{{ "/assets/images/blog/2018/03/newspaper-template.png" | relative_url }}">
   <figcaption>My custom newspaper template</figcaption>
 </figure>
 
@@ -46,7 +46,7 @@ Chronicling America allows you to “clip” a portion of the page, just like an
 Tropy provides a different solution to this problem. Its tools allow me to get the benefit of having the high-resolution image of the whole page with the legibility of a smaller section. In the item view, you can create a selection to demarcate a specific area of your photo. You can then zoom directly to that area, change that area’s title, and add notes specifically related to that area. You can have multiple selections per image, so if you’re interested in more than one article on the page, or your article spans multiple columns, you can manage them all in one item. So I get the advantage of the clipping function along with the full-resolution image.
 
 <figure>
-  <img srcset="/assets/images/blog/2018/03/selection.jpg 1x, /assets/images/blog/2018/03/selection@2x.jpg 2x" src="/assets/images/blog/2018/03/selection.jpg">
+  <img srcset="{{ "/assets/images/blog/2018/03/selection.jpg" | relative_url }} 1x, {{ "/assets/images/blog/2018/03/selection@2x.jpg" | relative_url }} 2x" src="{{ "/assets/images/blog/2018/03/selection.jpg" | relative_url }}">
   <figcaption>Here, the article I am interested in is highlighted as a selection.</figcaption>
 </figure>
 

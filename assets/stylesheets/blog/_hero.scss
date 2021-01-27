@@ -82,7 +82,7 @@ main .blog-hero {
     }
 
     @media (min-width: $sm) {
-      background: url("/assets/images/blog-hero-illustration.png") no-repeat center bottom;
+      background: url("../images/blog-hero-illustration.png") no-repeat center bottom;
 
       @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2ddpx) {
         background: url("../images/blog-hero-illustration@2x.png") no-repeat center bottom / 3280px 810px;
