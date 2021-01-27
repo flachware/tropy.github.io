@@ -9,7 +9,7 @@ js: /assets/javascripts/main.js
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {%- seo -%}
     {%- feed_meta -%}
-    <link rel="stylesheet" href="/assets/stylesheets/main.css">
+    <link rel="stylesheet" href="{{ /assets/stylesheets/main.css | relative_url }}">
     {%- if layout.loading-js -%}
       <script src="{{ layout.loading-js }}"></script>
     {%- endif -%}
