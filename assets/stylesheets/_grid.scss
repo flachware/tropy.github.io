@@ -1,0 +1,43 @@
+//
+// Grid
+//
+
+.container-fluid {
+  margin: 0 auto;
+  padding: 0 ($grid-column-gap / 2);
+  max-width: $container-fluid-max-width;
+
+  @media (min-width: $sm) {
+    width: $container-fluid-width;
+    padding: 0;
+  }
+
+  .page main & {
+    max-width: 789px;
+  }
+}
+
+.row {
+  @media (min-width: $sm) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: $grid-column-gap;
+  }
+}
+
+[class*="col"] {
+  grid-column-end: span 12;
+  min-width: 0; // Prevent grid blowout
+}
+
+@media (min-width: $sm) {
+  @include make-grid(sm);
+}
+
+@media (min-width: $md) {
+  @include make-grid(md);
+}
+
+@media (min-width: $lg) {
+  @include make-grid(lg);
+}

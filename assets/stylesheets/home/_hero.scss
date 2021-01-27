@@ -1,0 +1,140 @@
+//
+// Hero
+//
+
+.hero {
+  margin-top: -$header-height-mobile;
+  background: linear-gradient($blue-dark, $blue, tint($blue-light, 40%) calc(100% - 80px));
+  padding-top: $header-height-mobile + $space-xl;
+  color: $white;
+  margin-bottom: $section-padding-y-phone + 96px + 32px; // 32px: compensation for illustration
+  position: relative;
+
+  @media (pointer: coarse), (max-width: $sm - 1px) {
+    padding-bottom: 110px; // 23px to highest summit
+  }
+
+  @media (min-width: $sm) {
+    padding-top: $header-height + $space-xl;
+    padding-bottom: 123px; // 560px height
+    margin-top: -$header-height;
+    margin-bottom: $section-padding-y + 61px + 32px; // 32px: compensation for illustration
+  }
+
+  @media (pointer: coarse) and (min-width: $sm) {
+    padding-bottom: 117px; // 30px to highest summit
+  }
+
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    width: 118px;
+    height: 101px;
+    background: url("/assets/images/tropy-icon-phone.svg") no-repeat 0 0;
+    text-indent: -99em;
+    overflow: hidden;
+    margin: 0 auto;
+
+    @media (min-width: $sm) {
+      width: 156px;
+      height: 134px;
+      background: url("/assets/images/tropy-icon.svg") no-repeat 0 0;
+    }
+  }
+
+  .lead {
+    font-size: 30px; // 3/4
+    font-weight: 600;
+    line-height: $headings-line-height;
+    text-align: center;
+    margin-top: 36px - 22px; // 3/4
+    margin-bottom: 32px - 13px; // 3/4
+    letter-spacing: -0.015em;
+    color: inherit;
+
+    @media (min-width: $sm) {
+      font-size: 40px;
+      margin-top: 36px - 17px;
+      margin-bottom: 32px - 7px;
+    }
+  }
+
+  .btn-download {
+    margin-bottom: ($space-lg - 6px);
+
+    @media (pointer: coarse), (max-width: $sm - 1px) {
+      display: none;
+    }
+  }
+
+  .btn-email {
+    margin-bottom: (18px - 6px);
+
+    @media (pointer: fine) and (min-width: $sm) {
+      display: none;
+    }
+  }
+
+  .version {
+    font-size: 14px;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    margin-bottom: ($space-lg - 11px);
+
+    @media (min-width: $sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  .hero-illustration {
+    position: absolute;
+    right: 0;
+    bottom: -250px;
+    left: 0;
+    height: 810px;
+    pointer-events: none;
+    background: url("../images/hero-illustration-mobile-part-2.png") no-repeat center bottom;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+      background:
+        url("../images/hero-illustration-mobile-part-2@2x.png") no-repeat center bottom / 768px 810px;
+    }
+
+    @media (max-width: $sm - 1px) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url("../images/hero-illustration-mobile-part-1.png") no-repeat -418px bottom;
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+          background: url("../images/hero-illustration-mobile-part-1@2x.png") no-repeat -418px bottom / 768px 810px;
+        }
+
+        @include tween(
+          -418px,
+          0px,
+          320px,
+          $sm,
+          background-position-x
+        );
+      }
+    }
+
+    @media (min-width: $sm) {
+      background: url("../images/hero-illustration.png") no-repeat center bottom;
+
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx)  {
+        background: url("../images/hero-illustration@2x.png") no-repeat center bottom / 3280px 810px;
+      }
+    }
+  }
+}

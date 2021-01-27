@@ -1,0 +1,93 @@
+//
+// Variables
+//
+
+// Colors
+
+$blue-light:   #68c1e8;
+$blue:         #5c93e5;
+$blue-dark:    #395bac;
+$blue-darkest: #060d2e;
+
+$white:        #fff;
+$gray-lighter: #f0f0f5; // 2% saturation
+$gray-light:   #e6e6eb; // 2% saturation
+$gray:         #77777c; // 4% saturation
+$gray-dark:    #515154; // 4% saturation
+$black:        #101012; // 8% saturation
+
+$brand-primary: $blue;
+
+// Spacing
+
+$space-min: 4px;
+$space-xs:  8px;
+$space-sm:  12px;
+$space-md:  16px;
+$space-lg:  24px;
+$space-xl:  32px;
+$space-xxl: 48px;
+
+// Base
+
+$body-color:  $black;
+$focus-color: $brand-primary;
+$link-color:  $brand-primary;
+
+// Type
+
+$font-family-base:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "SFMono-Regular", Menlo, Consolas, Monaco, "Courier New", monospace;
+$font-size-base:        16px;
+$font-size-large:       21px;
+$line-height-base:      1.5;
+
+$headings-line-height: 1.1;
+$headings-font-weight: 600;
+
+// Grid
+
+$container-fluid-width: 100% * 5 / 6; // 64px margin on portrait tablet
+$container-fluid-max-width: 1200px;
+
+$grid-column-gap: $space-xl;
+
+// Breakpoints
+
+$sm: 768px;
+$md: 1024px;
+$lg: 1200px;
+$xl: 1440px;
+
+// Z-index master list
+
+$z-index-header:   1010;
+$z-index-dropdown: 1020;
+$z-index-backdrop: 1030;
+$z-index-modal:    1040;
+
+// Layout
+
+$section-padding-y: 128px;
+$section-padding-y-phone: 80px; // 5/8
+
+// Components
+
+// Header
+$header-color:         #111;
+$header-home-color:    #fff;
+$header-height:        96px;
+$header-height-mobile: 64px;
+
+// File support
+$file-support-max-width: $container-fluid-max-width * 10 / 12;
+$file-support-icon-size: 80px;
+
+// Footer
+$footer-color:  $body-color;
+
+// Blog
+$blog-max-width: 700px;
+$blog-font-size: 17px;
+$blog-line-height: 1.6;
+$blog-link-color: mix(#4848b3, $blue, 50%);

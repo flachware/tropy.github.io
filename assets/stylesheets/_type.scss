@@ -1,0 +1,81 @@
+//
+// Type
+//
+
+// 36px, 48px: Upper limit
+// 25px, 32px: interpolated
+// 18px, 21px: lower limit
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+}
+
+h1,
+.h1 {
+  font-size: 36px; // 3/4
+  letter-spacing: -0.015em;
+
+  @media (min-width: $sm) {
+    font-size: 48px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 25px;
+  letter-spacing: -0.01em;
+
+  @media (min-width: $sm) {
+    font-size: 32px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 18px;
+
+  @media (min-width: $sm) {
+    font-size: $font-size-large;
+  }
+}
+
+.lead {
+  font-size: 18px;
+  color: $gray-dark;
+  line-height: (4 / 3);
+  margin: 9px auto 0;
+
+  @media (min-width: $sm) {
+    font-size: $font-size-large;
+    text-align: center;
+    margin-top: 11px;
+  }
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+pre {
+  font-family: $font-family-monospace;
+  overflow: auto;
+}
+
+strong {
+  font-weight: 600;
+}

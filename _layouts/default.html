@@ -1,0 +1,25 @@
+---
+js: /assets/javascripts/main.js
+---
+
+<!doctype html>
+<html lang="en" class="{{ page.class }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {%- seo -%}
+    {%- feed_meta -%}
+    <link rel="stylesheet" href="/assets/stylesheets/main.css">
+    {%- if layout.loading-js -%}
+      <script src="{{ layout.loading-js }}"></script>
+    {%- endif -%}
+  </head>
+  <body>
+    {%- include header.html -%}
+    <main>
+      {{ content }}
+    </main>
+    {%- include footer.html -%}
+    <script type="module" src="{{ layout.js }}"></script>
+  </body>
+</html>

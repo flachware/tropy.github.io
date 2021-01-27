@@ -1,0 +1,391 @@
+//
+// Portable projects
+//
+
+.portable-projects {
+  --x: 50%;
+  --y: calc(100% - (50vw - 16px));
+  --r: 180px;
+
+  background-color: #1e1e21;
+  color: $white;
+  overflow: visible;
+  padding-top: $section-padding-y-phone;
+
+  @media (min-width: $sm) {
+    padding-top: $section-padding-y;
+  }
+
+  .row {
+    position: relative;
+  }
+
+  .col-md-6 {
+    @media (min-width: $sm) {
+      padding: $section-padding-y 0;
+    }
+
+    @include tween(
+      0px,
+      columns(2, $container-fluid-max-width) + $grid-column-gap,
+      $sm,
+      $xl,
+      padding-right
+    );
+  }
+
+  h2 {
+    margin: -14px 0 ($section-padding-y-phone * 3 / 4 - 16px);
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $sm) {
+      margin: -19px 0 ($section-padding-y * 3 / 4 - $section-padding-y - 20px);
+      text-align: left;
+    }
+
+    @media (min-width: $md) {
+      text-align: center;
+    }
+  }
+
+  h3 {
+    margin: 0 0 9px;
+
+    @media (min-width: $sm) {
+      margin-bottom: 11px;
+    }
+  }
+
+  p {
+    color: #b6b6ba;
+    font-size: 18px;
+    line-height: (4 / 3);
+    margin: 0;
+    letter-spacing: -0.01em;
+
+    @media (min-width: $sm) {
+      font-size: 21px;
+    }
+
+    &:last-child {
+      margin-bottom: 32px + 16px; // 32px
+
+      @media (min-width: $sm) {
+        margin-bottom: -19px; // 64px
+      }
+
+      @media (min-width: $md) {
+        margin-bottom: -6px;
+      }
+    }
+
+    & + h3 {
+      margin-top: 60px - 16px;
+
+      @media (min-width: $sm) {
+        margin-top: 96px - 18px;
+      }
+    }
+  }
+
+  a {
+    color: tint($link-color, 20%);
+  }
+
+  .illustration {
+    //background-color: rgba(magenta, 0.2);
+    grid-row: 2;
+    grid-column: span 12;
+    padding-top: 100%;
+    position: relative;
+
+    @media (min-width: $sm) {
+      padding-top: 0;
+      height: 687px;
+    }
+
+    @media (min-width: $md) {
+      grid-row: initial;
+      position: absolute;
+      left: calc(50% + #{$grid-column-gap / 2});
+      top: 0;
+      width: calc(50% - #{$grid-column-gap / 2});
+      height: 100%;
+    }
+
+    @include tween (
+      520px,
+      584px,
+      $md,
+      $xl,
+      min-width
+    );
+
+    @include tween (
+      76px,
+      0px,
+      $md,
+      $xl,
+      margin-left
+    );
+  }
+
+  .radial-gradient {
+    --r: 180px;
+
+    pointer-events: none;
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    bottom: -100px;
+    left: -100px;
+    mix-blend-mode: color-dodge;
+    clip-path: inset(0px 0px 100px 0px);
+    background-image:
+      radial-gradient(
+        circle at 50% 50%,
+        $blue-dark 0,
+        rgba($blue-dark, 0) var(--r)
+      );
+
+    @include tween(180px, 360px, 320px, $sm, --r);
+  }
+
+  .tpy-icon {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @include tween(
+      80px,
+      192px,
+      320px,
+      $sm,
+      width, height
+    );
+  }
+
+  .notebook-1,
+  .notebook-2,
+  .notebook-3 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+
+    @include tween(
+      91.67px,
+      220px,
+      320px,
+      $sm,
+      width, height
+    );
+  }
+
+  .notebook-1 {
+    --t: 0px;
+
+    bottom: 0;
+    right: 32.42%;
+    transform: translate(50%, 50%) translateY(var(--t)) rotate(-18deg);
+
+    @include tween(-18px, -42px, 320px, $sm, --t);
+  }
+
+  .notebook-2 {
+    --t: 0px;
+
+    left: 0;
+    top: 59.13%;
+    transform: translate(-50%, -50%) translateX(var(--t)) rotate(81deg);
+
+    @include tween(4px, 32px, 320px, $sm, --t);
+
+    @media (min-width: $sm) {
+      --t: -16px;
+    }
+
+    @include tween(8px, -16px, $md, $xl, --t);
+  }
+
+  .notebook-3 {
+    left: 84.70%;
+    top: 11.68%;
+    transform: translate(-50%, -50%) rotate(-144deg);
+
+    @media (min-width: $md) {
+      --r: -144deg;
+      --x: -10px;
+      --y: 350px;
+
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(var(--r)) translate(var(--x), var(--y));
+    }
+
+    @for $i from ($md / 1px) through ($xl / 1px) {
+      @media (min-width: #{$i}px) {
+        #{--r}: -153deg + 9deg * ($i - ($md / 1px)) * 1 / (($xl - $md) / 1px);
+      }
+    }
+
+    @include tween(13px, -10px, $md, $xl, --x);
+
+    @include tween(344px, 350px, $md, $xl, --y);
+  }
+
+  [class*="pixel-"] {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background-repeat: no-repeat;
+
+    @media (max-width: $sm - 1px) {
+      // Scale background-image to keep the pixels perfectly square
+      background-size: (0.9375vw * 1.2) (0.9375vw * 1.2);
+    }
+
+    &.lg {
+      width: 14px;
+      height: 14px;
+
+      @media (max-width: $sm - 1px) {
+        background-size: (1.875vw * 1.2) (1.875vw * 1.2);
+      }
+    }
+
+    &.green {
+      background-image: linear-gradient(#67ce9d, #67ce9d);
+    }
+
+    &.blue-dark {
+      background-image: linear-gradient($blue-dark, $blue-dark);
+    }
+
+    &.red {
+      background-image: linear-gradient(#f66, #f66);
+    }
+
+    &.blue-light {
+      background-image: linear-gradient($blue-light, $blue-light);
+    }
+
+    &.brown {
+      background-image: linear-gradient(#736673, #736673);
+    }
+  }
+
+  .pixel-1 {
+    left: 52.57%;
+    top: 21.83%;
+  }
+
+  .pixel-2 {
+    left: 71.4%;
+    top: 25.76%;
+  }
+
+  .pixel-3 {
+    left: 75%;
+    top: 35.52%;
+  }
+
+  .pixel-4 {
+    left: calc(50% + 60px);
+    top: calc(50% - 33px);
+
+    @media (max-width: $sm - 1px) {
+      left: calc(50% + 7.8125vw);
+      top: calc(50% - 4.296875vw);
+    }
+  }
+
+  .pixel-5 {
+    left: 66.78%;
+    top: 48.03%;
+  }
+
+  .pixel-6 {
+    left: 73.80%;
+    top: 56.04%;
+  }
+
+  .pixel-7 {
+    left: 94.69%;
+    top: 68.41%;
+  }
+
+  .pixel-8 {
+    left: 64.38%;
+    top: 75.40%;
+  }
+
+  .pixel-9 {
+    left: 53.94%;
+    top: 72.93%;
+  }
+
+  .pixel-10 {
+    left: 50.86%;
+    top: 65.65%;
+  }
+
+  .pixel-11 {
+    left: 48.80%;
+    top: 69.29%;
+  }
+
+  .pixel-12 {
+    left: 34.08%;
+    top: 79.91%;
+  }
+
+  .pixel-13 {
+    --x: 0;
+    --y: 0;
+
+    left: 24.32%;
+    top: 58.95%;
+    transform: translate(var(--x), var(--y));
+
+    @include tween(12px, 0, $md, $xl, --x);
+    @include tween(6px, 0, $md, $xl, --y);
+  }
+
+  .pixel-14 {
+    left: 31.34%;
+    top: 56.19%;
+  }
+
+  .pixel-15 {
+    left: 34.25%;
+    top: 50.22%;
+  }
+
+  .pixel-16 {
+    left: 24.83%;
+    top: 49.78%;
+  }
+
+  .pixel-17 {
+    left: -2.74%;
+    top: 39.16%;
+
+    @media (max-width: $sm - 1px) {
+      left: 2.74%;
+    }
+  }
+
+  .pixel-18 {
+    left: 26.2%;
+    top: 30.28%;
+  }
+  .pixel-19 {
+    left: 45.55%;
+    top: 31.44%;
+  }
+}

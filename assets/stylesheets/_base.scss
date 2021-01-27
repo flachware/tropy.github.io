@@ -1,0 +1,51 @@
+//
+// Base
+//
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+
+    .key & {
+      outline: 3px solid $focus-color;
+      outline-offset: 2px;
+    }
+  }
+}
+
+html {
+  &.home {
+    &,
+    body {
+      overflow-x: hidden;
+    }
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+figure {
+  margin: 0;
+}

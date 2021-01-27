@@ -1,0 +1,25 @@
+//
+// Blog base
+//
+
+.blog {
+  .posts,
+  .post {
+    .container-fluid {
+      @media (min-width: $sm) {
+        max-width: $blog-max-width;
+      }
+    }
+  }
+
+  &.blog-home,
+  &.blog-category {
+    main {
+      padding-bottom: $section-padding-y-phone - 35px;
+
+      @media (min-width: $sm) {
+        padding-bottom: $section-padding-y - 33px;
+      }
+    }
+  }
+}

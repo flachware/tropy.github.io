@@ -1,0 +1,21 @@
+//
+// Tween
+//
+
+// $from, $to: Must be pixel values
+
+@mixin tween($from, $to, $start, $stop, $properties...) {
+  $range: $stop - $start;
+  $delta: $to - $from;
+  $factor: $delta / $range;
+
+  @each $property in $properties {
+    @media (min-width: $start) {
+      #{$property}: calc(#{$from} + (100vw - #{$start}) * #{$factor});
+    }
+
+    @media (min-width: $stop) {
+      #{$property}: $to;
+    }
+  }
+}

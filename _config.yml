@@ -1,0 +1,67 @@
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+title: Tropy
+#email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Tropy is free open-source software that allows you to organize and describe
+  photographs of research material.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: tropy
+github_username: tropy
+
+# Options
+show_excerpts: true
+
+# Metadata for Jekyll SEO tag
+tagline: Explore your research photos
+twitter:
+  username: tropy
+  card: summary
+#logo:
+social:
+  name: Tropy
+  links:
+    - https://twitter.com/tropy
+    - https://github.com/tropy
+google_site_verification: f4Qn7nonE_x2wrByaZVZfPeuP5iVt-W67eiIGE-KOWI
+lang: en_US
+
+# Set default twitter image and blog post classes via front matter defaults
+page_image: &page_image "/assets/images/twitter-icon-1.1.png"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: *page_image
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      class: "blog blog-post"
+      layout: "post"
+
+# Set blog post permalinks
+collections:
+  posts:
+    permalink: /blog/:slug
+
+# Change the default sass_dir from _sass to assets/stylesheets
+sass:
+  sass_dir: assets/stylesheets
+
+# RSS feed options
+feed:
+  path: /blog/rss/index.xml
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Serve command options
+host: 0.0.0.0
+
