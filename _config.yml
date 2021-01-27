@@ -6,7 +6,7 @@ title: Tropy
 description: >- # this means to ignore newlines until "baseurl:"
   Tropy is free open-source software that allows you to organize and describe
   photographs of research material.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/tropy.github.io" # the subpath of your site, e.g. /blog
 url: "https://tropy.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tropy
 github_username: tropy
